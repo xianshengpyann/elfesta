@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>ELFESTA</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#050816;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    button{
+      cursor:pointer;
+      border:none;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      padding:25px 40px;
+    }
+
+    .navbar{
+      max-width:1400px;
+      margin:auto;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:20px 35px;
+
+      background:rgba(0,0,0,0.25);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(12px);
+
+      border-radius:30px;
+    }
+
+    .logo{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  font-size:34px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+ .logo img{
+      width:60px;
+      height:60px;
+      object-fit:contain;
+      filter:
+      drop-shadow(0 0 10px rgba(250,204,21,0.5))
+      drop-shadow(0 0 20px rgba(37,99,235,0.4));
+    }
+
+    nav{
+      display:flex;
+      gap:45px;
+    }
+
+    nav a{
+      color:rgba(255,255,255,0.75);
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#facc15;
+    }
+
+    .nav-btn{
+      background:linear-gradient(135deg,#2563eb,#0ea5e9);
+
+      padding:16px 28px;
+
+      color:white;
+
+      border-radius:18px;
+
+      font-weight:700;
+
+      transition:0.3s;
+
+      box-shadow:0 10px 30px rgba(37,99,235,0.4);
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero{
+    position: relative;
+    min-height: 100vh;
+    padding-top: 140px;
+    padding-bottom: 120px;
+    overflow: visible;
+}
+
+    /* BACKGROUND */
+
+    .hero-bg{
+      position:absolute;
+      inset:0;
+
+      background-image:url('ChatGPT image.png');
+      background-size:cover;
+      background-position:center;
+
+      transform:scale(1.00);
+    }
+
+    /* OVERLAY */
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+
+      background:
+      linear-gradient(
+        to right,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.55)
+      );
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:10;
+
+      width:100%;
+      max-width:1400px;
+
+      margin:auto;
+
+      padding:0 50px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:60px;
+      align-items:center;
+    }
+
+    /* LEFT */
+
+    .hero-sub{
+      color:#facc15;
+
+      font-size:14px;
+      font-weight:700;
+
+      letter-spacing:7px;
+
+      margin-bottom:25px;
+
+      text-transform:uppercase;
+    }
+
+    .hero-title{
+      font-size:130px;
+      line-height:0.95;
+      font-weight:900;
+
+      margin-bottom:25px;
+
+      background:linear-gradient(
+        to bottom,
+        #ffffff,
+        #dbeafe,
+        #93c5fd
+      );
+
+      background-clip:text;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero-heading{
+      font-size:58px;
+      line-height:1.1;
+      font-weight:900;
+
+      color:#facc15;
+
+      margin-bottom:30px;
+
+      text-transform:uppercase;
+    }
+
+    .hero-desc{
+      font-size:22px;
+      line-height:1.8;
+
+      color:rgba(255,255,255,0.8);
+
+      max-width:700px;
+
+      margin-bottom:45px;
+    }
+
+    /* BUTTON */
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+
+      margin-bottom:50px;
+    }
+
+    .primary-btn{
+      background:linear-gradient(135deg,#2563eb,#0ea5e9);
+
+      padding:20px 34px;
+
+      border-radius:20px;
+
+      font-size:18px;
+      font-weight:800;
+
+      color:white;
+
+      transition:0.3s;
+
+      box-shadow:0 15px 40px rgba(37,99,235,0.45);
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-4px);
+    }
+
+    .secondary-btn{
+      background:rgba(0,0,0,0.35);
+
+      border:1px solid rgba(255,255,255,0.15);
+
+      padding:20px 34px;
+
+      border-radius:20px;
+
+      color:white;
+
+      font-size:18px;
+      font-weight:700;
+
+      transition:0.3s;
+    }
+
+    .secondary-btn:hover{
+      border-color:#facc15;
+    }
+
+    /* INFO */
+
+    .hero-info{
+      display:flex;
+      flex-wrap:wrap;
+      gap:25px;
+    }
+
+    .info-card{
+      display:flex;
+      align-items:center;
+      gap:18px;
+
+      padding:20px 24px;
+
+      border-radius:24px;
+
+      background:rgba(0,0,0,0.35);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(8px);
+    }
+
+    .info-icon{
+      font-size:42px;
+      color:#facc15;
+    }
+
+    .info-title{
+      color:rgba(255,255,255,0.6);
+      font-size:13px;
+      letter-spacing:2px;
+      margin-bottom:4px;
+      text-transform:uppercase;
+    }
+
+    .info-text{
+      font-size:24px;
+      font-weight:800;
+    }
+
+    /* RIGHT CARD */
+
+    .countdown-card{
+  position:relative;
+
+  background:
+  linear-gradient(
+    135deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.03)
+  );
+
+  border:1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter:Solid(18px);
+
+  border-radius:40px;
+
+  padding:45px;
+
+  overflow:visible;
+
+  box-shadow:
+  0 20px 60px rgba(0,0,0,0.45);
+}
+
+.countdown-card::before{
+  content:'';
+
+  position:absolute;
+
+  width:250px;
+  height:250px;
+
+  background:rgba(46, 58, 77, 0.25);
+
+  filter:blur(100px);
+
+  top:-100px;
+  right:-80px;
+
+  border-radius:50%;
+}
+    .countdown-title{
+      text-align:center;
+
+      color:#facc15;
+
+      text-transform:uppercase;
+
+      letter-spacing:5px;
+
+      margin-bottom:35px;
+
+      font-size:14px;
+
+      font-weight:700;
+    }
+
+    .countdown-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:15px;
+    }
+
+    .count-item{
+  position:relative;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255,255,255,0.03)
+  );
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:26px;
+
+  padding:30px 12px;
+
+  transition:0.4s;
+
+  overflow:visible;
+
+  box-shadow:
+  inset 0 1px 1px rgba(255,255,255,0.05),
+  0 10px 25px rgba(0,0,0,0.35);
+}
+
+.count-item:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(250,204,21,0.4);
+
+  box-shadow:
+  0 15px 35px rgba(37,99,235,0.45);
+}
+
+    .count-number{
+  font-size:68px;
+
+  font-weight:900;
+
+  color:white;
+
+  line-height:1;
+
+  margin-bottom:14px;
+
+  text-shadow:
+  0 0 10px rgba(255,255,255,0.2),
+  0 0 25px rgba(255, 255, 255, 0.03);
+}
+
+   .count-label{
+  font-size:12px;
+
+  text-transform:uppercase;
+
+  letter-spacing:4px;
+
+  color:rgba(255,255,255,0.55);
+
+  font-weight:600;
+}
+    /* =========================
+       SECTION
+    ========================= */
+
+    section{
+      padding:120px 50px;
+    }
+
+    .container{
+      max-width:1400px;
+      margin:auto;
+    }
+
+    .section-top{
+      text-align:center;
+      margin-bottom:70px;
+    }
+
+    .section-sub{
+      color:#facc15;
+      text-transform:uppercase;
+      letter-spacing:6px;
+      font-size:14px;
+      margin-bottom:20px;
+      font-weight:700;
+    }
+
+    .section-title{
+      font-size:62px;
+      font-weight:900;
+      line-height:1.1;
+    }
+
+    /* ABOUT */
+
+    .about-box{
+      background:#0b1225;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      padding:70px;
+
+      border-radius:35px;
+    }
+
+    .about-text{
+      font-size:22px;
+      line-height:2;
+      color:rgba(255,255,255,0.75);
+
+      max-width:1000px;
+    }
+
+    /* COMPETITION */
+
+    .competition-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+
+    .competition-link{
+  cursor:pointer;
+  display:block;
+    }
+
+    .competition-link:hover .competition-card{
+  transform:translateY(-10px);
+    }
+
+    .competition-card{
+     background:#0b1225;
+
+     border:1px solid rgba(255,255,255,0.08);
+
+     padding:45px;
+
+     border-radius:32px;
+
+     transition:0.4s;
+
+     text-align:center;
+
+     display:flex;
+     flex-direction:column;
+     align-items:center;
+     justify-content:center;
+    }
+
+    .competition-card:hover{
+      transform:translateY(-10px);
+
+      border-color:#facc15;
+    }
+
+    .competition-icon{
+      font-size:60px;
+      margin-bottom:25px;
+    }
+
+    .competition-title{
+      font-size:32px;
+      font-weight:800;
+
+      color:#facc15;
+
+      margin-bottom:20px;
+    }
+
+    .competition-desc{
+      color:rgba(255,255,255,0.72);
+      line-height:1.9;
+      font-size:18px;
+    }
+
+    /* TIMELINE */
+
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .timeline-item{
+      background:#0b1225;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      padding:35px;
+
+      border-radius:28px;
+
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .timeline-title{
+      font-size:28px;
+      font-weight:800;
+    }
+
+    .timeline-date{
+      color:#facc15;
+      font-size:22px;
+      font-weight:700;
+    }
+
+    /* FAQ */
+
+    .faq-grid{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    .faq-item{
+      background:#0b1225;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      padding:35px;
+
+      border-radius:28px;
+    }
+
+    .faq-q{
+      font-size:28px;
+      font-weight:800;
+
+      color:#facc15;
+
+      margin-bottom:20px;
+    }
+
+    .faq-a{
+      color:rgba(255,255,255,0.72);
+
+      line-height:1.9;
+
+      font-size:18px;
+      font-variant-numeric: oldstyle-nums;
+    }
+
+    /* SPONSOR */
+
+    .sponsor-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:25px;
+    }
+
+    .sponsor-card{
+      background:#0b1225;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      border-radius:30px;
+
+      height:170px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      font-size:36px;
+      font-weight:900;
+
+      color:#facc15;
+    }
+
+    /* =========================
+    POPUP
+    ========================= */
+
+.popup{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.75);
+
+  display:none;
+
+  justify-content:center;
+
+  align-items:flex-start;
+
+  overflow-y:auto;
+
+  z-index:9999;
+
+  padding:40px;
+}
+
+.popup-content{
+  width:100%;
+  max-width:1600px;
+
+  background:#031425;
+
+  border-radius:40px;
+
+  padding:60px;
+
+  position:relative;
+
+  border:1px solid rgba(255,255,255,0.1);
+
+  margin-top:40px;
+  margin-bottom:40px;
+  max-height:none;
+}
+
+.close-popup{
+  position:absolute;
+
+  top:25px;
+  right:30px;
+
+  font-size:32px;
+
+  cursor:pointer;
+}
+
+.popup-title{
+  text-align:center;
+
+  font-size:48px;
+
+  margin-bottom:50px;
+
+  color:#beae03;
+}
+
+.popup-grid{
+  display:grid;
+
+  grid-template-columns:repeat(4,1fr);
+
+  gap:30px;
+
+  align-items:start;
+}
+
+.popup-card{
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:stretch;
+
+  min-height:520px;
+
+  background:#dccb9d;
+
+  border-radius:30px;
+
+  padding:35px 25px;
+
+  text-align:center;
+
+  border:2px solid #facc15;
+
+  box-shadow:0 0 35px rgba(250,204,21,0.4);
+}
+
+.popup-img{
+  width:120px;
+  height:120px;
+
+  object-fit:contain;
+
+  margin-bottom:15px;
+}
+
+.popup-school{
+  color:#222;
+
+  margin-bottom:20px;
+}
+
+.popup-name{
+  min-height:50px;
+
+  font-size:38px;
+
+  color:#111;
+
+  margin-bottom:35px;
+
+  font-family:'poppins', sans-serif;
+}
+
+.popup-btn{
+  width:100%;
+
+  padding:18px;
+
+  border-radius:50px;
+
+  margin-bottom:15px;
+
+  font-size:20px;
+
+  cursor:pointer;
+}
+
+.register-btn{
+  background:black;
+  color:white;
+}
+
+.rulebook-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    width:100%;
+    height:70px;
+
+    border:2px solid #111;
+    border-radius:40px;
+
+    background:transparent;
+
+    color:#111;
+    font-size:20px;
+    font-weight:500;
+
+    margin-top:18px;
+
+    transition:0.3s;
+}
+  
+    /* FOOTER */
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.08);
+
+      padding:50px;
+
+      text-align:center;
+    }
+
+    footer h2{
+      font-size:48px;
+      font-weight:900;
+
+      color:#facc15;
+
+      margin-bottom:15px;
+    }
+
+    footer p{
+      color:rgba(255,255,255,0.65);
+      font-size:18px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media(max-width:1100px){
+
+      nav{
+        display:none;
+      }
+
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .competition-grid{
+        grid-template-columns:1fr;
+      }
+
+      .sponsor-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      textarea,
+      .submit-btn{
+        grid-column:span 1;
+      }
+
+      .hero-title{
+        font-size:82px;
+      }
+
+      .hero-heading{
+        font-size:38px;
+      }
+
+      .section-title{
+        font-size:42px;
+      }
+
+      .countdown-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:700px){
+
+      header{
+        padding:18px;
+      }
+
+      .navbar{
+        padding:18px 22px;
+      }
+
+      .hero-content{
+        padding:0 22px;
+      }
+
+      section{
+        padding:90px 22px;
+      }
+
+      .hero-title{
+        font-size:62px;
+      }
+
+      .hero-heading{
+        font-size:30px;
+      }
+
+      .hero-desc{
+        font-size:18px;
+      }
+
+      .section-title{
+        font-size:34px;
+      }
+
+      .timeline-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+      }
+
+      .count-number{
+        font-size:38px;
+      }
+
+      .sponsor-grid{
+        grid-template-columns:1fr;
+      }
+
+    }
+
+  @media(max-width:1200px){
+
+    .popup-grid{
+     grid-template-columns:repeat(2,1fr);
+    }
+
+    }
+
+    @media(max-width:700px){
+
+    .popup-grid{
+     grid-template-columns:1fr;
+    }
+
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+
+    <div class="navbar">
+
+      <div class="logo">
+  <img src="Logo.png" alt="Logo ELFESTA">
+  <span>ELFESTA</span>
+</div>
+
+      <nav>
+
+        <a href="#about">About</a>
+        <a href="#competition">Competition</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#faq">FAQ</a>
+        <a href="#sponsor">Sponsor</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- BACKGROUND -->
+    <div class="hero-bg"></div>
+
+    <!-- OVERLAY -->
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENT -->
+    <div class="hero-content">
+
+      <div class="hero-grid">
+
+        <!-- LEFT -->
+        <div>
+
+          <p class="hero-sub">
+            Archipelagos
+          </p>
+
+          <h1 class="hero-title">
+            ELFESTA
+          </h1>
+
+          <h2 class="hero-heading">
+            SEMARAK TALENTA DALAM HARMONI NUSANTARA
+          </h2>
+
+          <p class="hero-desc">
+            ELFESTA adalah festival lomba pelajar tingkat Banten-Jawa Barat
+            dengan nuansa modern Nusantara yang menghadirkan
+            kreativitas, budaya, kolaborasi, dan prestasi.
+          </p>
+
+          <!-- BUTTON -->
+          <div class="hero-buttons">
+
+            <button class="primary-btn">
+              DAFTAR SEKARANG →
+            </button>
+
+          </div>
+
+          <!-- INFO -->
+          <div class="hero-info">
+
+            <!-- DATE -->
+            <div class="info-card">
+
+              <div class="info-icon">
+                📅
+              </div>
+
+              <div>
+
+                <p class="info-title">
+                  Tanggal
+                </p>
+
+                <h4 class="info-text">
+                  6 - 8 Oktober 2026
+                </h4>
+
+              </div>
+
+            </div>
+
+            <!-- LOCATION -->
+            <div class="info-card">
+
+              <div class="info-icon">
+                📍
+              </div>
+
+              <div>
+
+                <p class="info-title">
+                  Lokasi
+                </p>
+
+                <h4 class="info-text">
+                  Cileungsi, Bogor, Indonesia
+                </h4>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+
+          <div class="countdown-card">
+
+            <p class="countdown-title">
+              MENUJU ELFESTA
+            </p>
+
+            <div class="countdown-grid">
+
+        <div class="count-item">
+
+    <h3 class="count-number" id="days">
+      00
+    </h3>
+
+    <p class="count-label">
+      Hari
+    </p>
+
+          </div>
+
+         <div class="count-item">
+
+    <h3 class="count-number" id="hours">
+      00
+    </h3>
+
+    <p class="count-label">
+      Jam
+    </p>
+
+          </div>
+
+         <div class="count-item">
+
+    <h3 class="count-number" id="minutes">
+      00
+    </h3>
+
+    <p class="count-label">
+      Menit
+    </p>
+
+          </div>
+
+        <div class="count-item">
+
+    <h3 class="count-number" id="seconds">
+      00
+    </h3>
+
+    <p class="count-label">
+      Detik
+    </p>
+
+          </div>
+
+</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="container">
+
+      <div class="about-box">
+
+        <div class="section-sub">
+          ABOUT ELFESTA
+        </div>
+
+        <h2 class="section-title" style="margin-bottom:30px;">
+          ELTAHFIDH FESTIVAL TALENTA
+        </h2>
+
+        <p class="about-text">
+          elFesta 26 adalah acara yang diselenggarakan Oleh OSIS SMAQ el Tafidh yang bertujuan 
+          untuk Mengembangkan Potensi serta wawasan Para Pemuda.
+          Bukan hanya wawasan intelektual lebih dari itu yakni, kecerdasan emosional yang berdasar pada karakter kepemimpinan generasi emas 2045 dan menumbuhkan rasa cinta tanah air serta memiliki daya saing yang tinggi dalam membangun berbagai aspek kemajuan bangsa pada masa yang akan datang.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- COMPETITION -->
+  <section id="competition">
+
+    <div class="container">
+
+      <div class="section-top">
+
+        <p class="section-sub">
+          COMPETITION
+        </p>
+
+        <h2 class="section-title">
+          Explore Your Creativity
+        </h2>
+
+      </div>
+
+     <div class="competition-grid">
+
+  <!-- ART -->
+  <div onclick="openArtPopup()" class="competition-link">
+
+    <div class="competition-card">
+
+      <div class="competition-icon">
+        🎨
+      </div>
+
+      <h3 class="competition-title">
+        ART
+      </h3>
+
+      <p class="competition-desc">
+        Tampilkan kreativitas Nusantara
+        melalui performance terbaik.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- SPORT -->
+  <div onclick="openSportPopup()" class="competition-link">
+
+    <div class="competition-card">
+
+      <div class="competition-icon">
+        ⚽
+      </div>
+
+      <h3 class="competition-title">
+        SPORT
+      </h3>
+
+      <p class="competition-desc">
+        Ekspresikan ide kreatif modern
+        dengan visual futuristik dan artistik.
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- ACADEMIC -->
+  <div onclick="openAcademicPopup()" class="competition-link">
+
+    <div class="competition-card">
+
+      <div class="competition-icon">
+        🏆
+      </div>
+
+      <h3 class="competition-title">
+        ACADEMIC
+      </h3>
+
+      <p class="competition-desc">
+        Ceritakan kisah inspiratif melalui
+        sinematografi kreatif dan modern.
+      </p>
+
+    </div>
+
+  </div>
+    </div>
+
+    <!-- POPUP -->
+    <div id="artPopup" class="popup">
+
+  <div class="popup-content">
+
+    <span class="close-popup" onclick="closePopup('artPopup')">
+      ✕
+    </span>
+
+    <h2 class="popup-title">
+      ART COMPETITION
+    </h2>
+
+    <div class="popup-grid">
+
+      <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          RATOEH JAROEH
+        </h3>
+
+      
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+      <a href="https://drive.google.com/file/d/1Mf7G8r46TbfrUdBRm2798TFB_A7Dqx0q/view?usp=drive_link"
+         target="_blank"
+         class="popup-btn rulebook-btn">
+          RULEBOOK       
+
+      </a>
+      </div>
+
+
+     <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          MURAL
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1Rd1DkZeJKVuZ25ew6dZTDWGvEjncUT8Y/view?usp=drive_link" 
+            target="_blank" 
+            class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          POSTER DIGITAL
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1ZaMeIHCFul7roT9xeXJGqNn0OzCymdSv/view?usp=drive_link" target="_blank" class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+    </div>
+
+    <div id="academicPopup" class="popup">
+
+  <div class="popup-content">
+
+    <span class="close-popup" onclick="closePopup('academicPopup')">
+      ✕
+    </span>
+
+    <h2 class="popup-title">
+      ACADEMIC COMPETITION
+    </h2>
+
+    <div class="popup-grid">
+
+      <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          MHQ
+        </h3>
+
+      
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+      <a href="https://drive.google.com/file/d/1exuGMyc-1VG2GTAT3oO39RfSV7KRyPUh/view?usp=drive_link"
+         target="_blank"
+         class="popup-btn rulebook-btn">
+          RULEBOOK
+    
+
+      </a>
+      </div>
+
+
+     <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          LCC
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1Rd1DkZeJKVuZ25ew6dZTDWGvEjncUT8Y/view?usp=drive_link" 
+            target="_blank" 
+            class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+    <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+            DEBAT
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1Rd1DkZeJKVuZ25ew6dZTDWGvEjncUT8Y/view?usp=drive_link" 
+            target="_blank" 
+            class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          SPEECH
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1Rd1DkZeJKVuZ25ew6dZTDWGvEjncUT8Y/view?usp=drive_link" 
+            target="_blank" 
+            class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+        <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          KHITOBAH
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1Rd1DkZeJKVuZ25ew6dZTDWGvEjncUT8Y/view?usp=drive_link" 
+            target="_blank" 
+            class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+    <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          ORASI
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1Rd1DkZeJKVuZ25ew6dZTDWGvEjncUT8Y/view?usp=drive_link" 
+            target="_blank" 
+            class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          MTQ
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1ZaMeIHCFul7roT9xeXJGqNn0OzCymdSv/view?usp=drive_link" 
+        target="_blank" 
+            class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+    </div>
+
+    <div id="sportPopup" class="popup">
+
+        <div class="popup-content">
+
+    <span class="close-popup" onclick="closePopup('sportPopup')">
+      ✕
+    </span>
+
+    <h2 class="popup-title">
+      SPORT COMPETITION
+    </h2>
+
+     <div class="popup-grid">
+
+      <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          FUTSAL
+        </h3>
+
+      
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+      <a href="https://drive.google.com/file/d/1exuGMyc-1VG2GTAT3oO39RfSV7KRyPUh/view?usp=drive_link"
+         target="_blank"
+         class="popup-btn rulebook-btn">
+          RULEBOOK
+        
+      </a>
+      </div>
+
+
+     <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          BADMINTON
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href=" https://drive.google.com/file/d/1wvvHfwJ9orDvizdaiNU1m9-zo2_PWnHZ/view?usp=drive_link"
+           target="_blank"
+           class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="popup-card">
+
+        <img src="hi.jpeg" class="popup-img">
+
+        <h3 class="popup-name">
+          ARCHERY
+        </h3>
+
+        <button class="popup-btn register-btn">
+          REGISTRATION
+        </button>
+
+        <a href="https://drive.google.com/file/d/1RzOO5KI08pXb_X_oFnD6vZPwAMzmUdjr/view?usp=sharing" 
+        target="_blank" 
+        class="popup-btn rulebook-btn">
+          RULEBOOK
+        </a>
+
+      </div>
+
+    </div>
+    </div>
+
+    </div>
+
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+
+    <div class="container">
+
+      <div class="section-top">
+
+        <p class="section-sub">
+          TIMELINE EVENT
+        </p>
+
+        <h2 class="section-title">
+          Important Dates
+        </h2>
+
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <h3 class="timeline-title">
+            Open Registration
+          </h3>
+
+          <p class="timeline-date">
+            1 Juni 2026
+          </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <h3 class="timeline-title">
+            Technical Meeting
+          </h3>
+
+          <p class="timeline-date">
+            20 September 2026
+          </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <h3 class="timeline-title">
+            Competition Day
+          </h3>
+
+          <p class="timeline-date">
+            6 Oktober 2026
+          </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+          <h3 class="timeline-title">
+            Awarding Night
+          </h3>
+
+          <p class="timeline-date">
+            8 Oktober 2026
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+
+    <div class="container">
+
+      <div class="section-top">
+
+        <p class="section-sub">
+          FAQ
+        </p>
+
+        <h2 class="section-title">
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <div class="faq-grid">
+
+        <div class="faq-item">
+
+          <h3 class="faq-q">
+            Siapa yang dapat mengikuti ELFESTA?
+          </h3>
+
+          <p class="faq-a">
+            Siswa SMP dan SMA dari seluruh Indonesia.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3 class="faq-q">
+            Apakah ELFESTA online atau offline?
+          </h3>
+
+          <p class="faq-a">
+            ELFESTA akan dilaksanakan secara hybrid
+            yaitu online dan offline.
+          </p>
+
+        </div>
+
+        <div class="faq-item">
+
+          <h3 class="faq-q">
+            Bagaimana cara mendaftar?
+          </h3>
+
+          <p class="faq-a">
+            Isi formulir registrasi dan unggah
+            seluruh dokumen yang dibutuhkan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SPONSOR -->
+  <section id="sponsor">
+
+    <div class="container">
+
+      <div class="section-top">
+
+        <p class="section-sub">
+          SPONSOR
+        </p>
+
+        <h2 class="section-title">
+          Supported By
+        </h2>
+
+      </div>
+
+      <div class="sponsor-grid">
+
+        <div class="sponsor-card">
+          ELFESTA
+        </div>
+
+        <div class="sponsor-card">
+          NUSANTARA
+        </div>
+
+        <div class="sponsor-card">
+          CULTURE
+        </div>
+
+        <div class="sponsor-card">
+          INDONESIA
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h2>
+      ELFESTA
+    </h2>
+
+    <p>
+      Archipelagos Festival 2026
+    </p>
+
+  </footer>
+
+  <script>
+  // Tanggal target countdown
+  const targetDate = new Date("October 6, 2026 00:00:00").getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    // Hitungan waktu
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor(
+      (distance % (1000 * 60 * 60)) / (1000 * 60)
+    );
+    const seconds = Math.floor(
+      (distance % (1000 * 60)) / 1000
+    );
+
+    // Masukkan ke HTML
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText =
+      String(hours).padStart(2, "0");
+    document.getElementById("minutes").innerText =
+      String(minutes).padStart(2, "0");
+    document.getElementById("seconds").innerText =
+      String(seconds).padStart(2, "0");
+
+    // Jika countdown selesai
+    if (distance < 0) {
+      clearInterval(interval);
+      document.getElementById("days").innerText = "00";
+      document.getElementById("hours").innerText = "00";
+      document.getElementById("minutes").innerText = "00";
+      document.getElementById("seconds").innerText = "00";
+    }
+  }
+
+  // Update tiap 1 detik
+  const interval = setInterval(updateCountdown, 1000);
+
+  // Jalankan pertama kali
+  updateCountdown();
+</script>
+
+ <script>
+
+function openArtPopup(){
+  document.getElementById("artPopup").style.display = "flex";
+}
+
+function openSportPopup(){
+  document.getElementById("sportPopup").style.display = "flex";
+}
+
+function openAcademicPopup(){
+  document.getElementById("academicPopup").style.display = "flex";
+}
+
+function closePopup(id){
+  document.getElementById(id).style.display = "none";
+}
+
+ </script>
+
+</body>
+</html>
